@@ -1,0 +1,47 @@
+body {
+    border: 1px solid red;
+
+    div {
+        background-color: lightgray;
+
+        padding: {
+            left: 5px;
+            right: 5px;
+            top: 10px;
+            bottom: 10px;
+        }
+
+        margin: {
+            left: 5px;
+            right: 5px;
+            top: 10px;
+            bottom: 10px;
+        }
+    }
+}
+
+@for $i from 1 through 5 {
+    #item#{$i} {
+        font-size:#{$i}px;
+    }
+}
+
+$map: (home: 'Thisis home section',
+about: 'This is about sectioin',
+contact: 'This is contact section'
+
+);
+
+@each $key,
+$value in $map {
+    ##{$key} {
+        content: $value;
+    }
+}
+$i: 1;
+@while $i <=10 {
+    #item#{$i} {
+        font-size: #{$i}px;
+        $i: $i + 2;
+    }
+}
